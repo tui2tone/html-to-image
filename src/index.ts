@@ -84,11 +84,10 @@ export async function toCanvas(
     .then((image) => {
       const canvas = document.createElement('canvas')
       const context = canvas.getContext('2d')!
-      const ratio = getPixelRatio()
       const { width, height } = getImageSize(domNode, options)
 
-      canvas.width = width * ratio
-      canvas.height = height * ratio
+      canvas.width = width
+      canvas.height = height
       canvas.style.width = `${width}`
       canvas.style.height = `${height}`
 
